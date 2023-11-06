@@ -81,8 +81,9 @@ function hlptmm_addnav() {
             "</a>";
         });
         nav_html = nav_html + "</div>";
+
         $(
-          "#navigation-header > nav > div.hidden.md:flex.justify-end.items-center.md:ml-10.md:pr-4.col-start-3"
+          "#navigation-header > nav > div.hidden.md\\:flex.justify-end.items-center.md\\:ml-10.md\\:pr-4.col-start-3"
         ).each(function () {
           $(this).parent().insertBefore(nav_html);
         });
