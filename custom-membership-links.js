@@ -81,8 +81,10 @@ function hlptmm_addnav() {
             "</a>";
         });
         nav_html = nav_html + "</div>";
-        $("#library").each(function () {
-          $(this).parent().prepend(nav_html);
+        $(
+          "#navigation-header > nav > div.hidden.md:flex.justify-end.items-center.md:ml-10.md:pr-4.col-start-3"
+        ).each(function () {
+          $(this).parent().insertBefore(nav_html);
         });
         $("#navigation-header nav a.hlp-custom-nav-link").css(
           "margin-right",
