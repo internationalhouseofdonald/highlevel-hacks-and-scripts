@@ -65,11 +65,13 @@ function hlptmm_addnav() {
         //
       }).done(function () {
         var nav_response_text = nav_data["responseJSON"];
+        console.log("nav_response_text", nav_response_text);
         var nav_html = "";
         nav_html =
           nav_html +
-          '<div id="hlp-custom-nav-links" style="display: flex;justify-content: center;align-items: center;">';
-        $.each(nav_response_text, function (i, e) {
+          '<div id="hlp-custom-nav-links" style="display: flex;justify-content: center;align-items: center; z-index: 10">';
+        Array.from(nav_response_text).forEach(function (e, i) {
+          console.log("each", i, e);
           var link_title = e["title"];
           var link_url = e["link_url"];
           nav_html =
@@ -80,15 +82,25 @@ function hlptmm_addnav() {
             link_title +
             "</a>";
         });
+
         nav_html = nav_html + "</div>";
 
-        $("#navigation-header > nav > div").each(function () {
-          $(this).parent().insertAfter(nav_html);
+        console.log("nav_html", nav_html);
+
+        $("#navigation-header > nav > div").first().after(nav_html);
+
+        $("#navigation-header nav a.hlp-custom-nav-link").css({
+          "margin-right": "35px",
+          "white-space": "nowrap",
+          background: "#c3a7cc",
+          color: "white",
+          "border-radius": "4px",
+          cursor: "pointer",
+          "padding-left": "7px",
+          "padding-right": "7px",
+          "padding-top": "3px",
+          "padding-bottom": "3px"
         });
-        $("#navigation-header nav a.hlp-custom-nav-link").css(
-          "margin-right",
-          "35px"
-        );
       });
     }
   } else {
