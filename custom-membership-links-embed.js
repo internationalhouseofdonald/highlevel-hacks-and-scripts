@@ -25,7 +25,7 @@ hlpt_jquery_loaded(function () {
   script2.id = "hlpt-membership-nav";
   script2.setAttribute("data-ark", "44321698704448");
   script2.src =
-    "https://cdn.jsdelivr.net/gh/internationalhouseofdonald/highlevel-hacks-and-scripts@v1.0.1/custom-membership-links.js?" +
+    "https://cdn.jsdelivr.net/gh/internationalhouseofdonald/highlevel-hacks-and-scripts@v1.0.2/custom-membership-links.js?" +
     new Date().toISOString();
   document.head.appendChild(script2);
 });
